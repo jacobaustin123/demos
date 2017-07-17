@@ -1,3 +1,12 @@
+"""A modified version of Kaggle user gauss256's preprocess images script, which can be 
+found on Kaggle at https://www.kaggle.com/gauss256/preprocess-images. This version takes
+command line arguments, and saves the data in a number of formats like .h5, .pickle, and .txt,
+and validates the download. This version does not incorporate multithreading, but several instances 
+can be run at the same time on different file paths. The script can also convert color images to
+greyscale, and can shuffle the images. In the future, someone could add a function that extracts
+labels automatically from images. For the moment, labels can be added to the .h5 file manually. See
+the if SAVE.upper() = .H5PY section for labels."""
+
 import argparse
 import os
 

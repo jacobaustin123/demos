@@ -1,4 +1,4 @@
-""Adapted from a utility used in the Google Deep Learning Udacity
+"""Adapted from a utility used in the Google Deep Learning Udacity
 Course, available at https://www.udacity.com/course/deep-learning--ud730."""
 
 
