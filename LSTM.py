@@ -1,3 +1,10 @@
+"""Simple, versatile LSTM model implemented in Tensorflow by Jacob Austin. The model is partly adapted from the Google Udacity Deep Learning class. 
+
+The network should be run from the command line. Command line options can be viewed using the -h handle, e.g. python LSTM.py -h. The default settings 
+may not be ideal for a given dataset, but at least for a demonstration, only the data location needs to be specified. A larger validation set 
+may also be desirable for a large dataset. Adding more layers and more nodes will make the network more accurate, but will also slow training."""
+
+
 from __future__ import print_function # 2.7 compatibility
 import os
 import numpy as np
@@ -14,7 +21,7 @@ def is_valid_type(arg):
         return arg
 
 parser = argparse.ArgumentParser(description="Simple, versatile LSTM model.")
-parser.add_argument("-i", dest="data", required=False, help="specify path to training data", metavar="DATA", type=is_valid_type, default='~/PycharmProjects/LSTM/shakespeare.txt')
+parser.add_argument("-i", dest="data", required=False, help="specify path to training data", metavar="DATA", type=is_valid_type, default='shakespeare.txt')
 parser.add_argument("-valid_size", dest="valid_size", required=False, help="size of validation set", metavar="VALID", type=int, default=1000)
 parser.add_argument("-batch_size", dest="batch_size", required=False, help="batch size", metavar="BATCH", type=int, default=32)
 parser.add_argument("-num_unrollings", dest="num_unrollings", required=False, help="number of LSTM unrollings", metavar="UNROLLINGS", type=int, default=20)
@@ -27,7 +34,7 @@ parser.add_argument("-final_rate", dest="final_rate", required=False, help="fina
 
 args = parser.parse_args()
 
-filename = os.path.abspath(os.path.expanduser(args.data)) #filename = '/Users/JAustin/Downloads/NSF/text.txt'
+filename = os.path.abspath(os.path.expanduser(args.data))
 
 batch_size = args.batch_size
 valid_size = args.valid_size
