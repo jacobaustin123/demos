@@ -1,11 +1,15 @@
-"""Simple, versatile LSTM model implemented in Tensorflow by Jacob Austin. The model is partly adapted from the Google Udacity Deep Learning class. 
+"""Simple, versatile LSTM model implemented in Tensorflow by Jacob Austin. 
+The model is partly adapted from the Google Udacity Deep Learning class. 
 
-The network should be run from the command line. Command line options can be viewed using the -h handle, e.g. python LSTM.py -h. The default settings 
-may not be ideal for a given dataset, but at least for a demonstration, only the data location needs to be specified. A larger validation set 
-may also be desirable for a large dataset. Adding more layers and more nodes will make the network more accurate, but will also slow training."""
+The network should be run from the command line. Command line options can be 
+viewed using the -h handle, e.g. python LSTM.py -h. The default settings 
+may not be ideal for a given dataset, but at least for a demonstration, only 
+the data location needs to be specified. A larger validation set may also be 
+desirable for a large dataset. Adding more layers and more nodes will make the
+network more accurate, but will also slow training."""
 
 
-from __future__ import print_function # 2.7 compatibility
+from __future__ import print_function
 import os
 import numpy as np
 import random
@@ -49,7 +53,9 @@ summary_frequency = args.summary_frequency
 init_rate = args.init_rate
 final_rate = args.final_rate
 
-learning_num_steps = num_steps // 2
+learning_num_steps = 10000 # increase for larger models, lower learning rates, longer train times
+
+valid_num_lines = 5 # increase to change number of sample lines displayed
 
 def read_data(filename):
     with open(filename, 'r') as f:
@@ -59,7 +65,7 @@ def read_data(filename):
 
 print("Loading data...")
 
-pattern = re.compile('([^\s\w.,]|_)+')
+pattern = re.compile('([^\s\w.,]|_)+') # used to sanitize inputs. change as desired.
 
 text = pattern.sub('', read_data(filename))
 
@@ -104,7 +110,6 @@ def id2char(dictid):
 #print(id2char(1), id2char(26), id2char(0))
 
 # Function to generate a training batch for the LSTM model.
-
 
 class BatchGenerator(object):
     def __init__(self, text, batch_size, num_unrollings):
@@ -359,7 +364,7 @@ with tf.Session(graph=graph) as session:
             if step % (summary_frequency * 10) == 0:
                 # Generate some samples.
                 print('=' * 80)
-                for _ in range(5):
+                for _ in range(valid_num_lines): 
                     feed = sample(random_distribution())
                     sentence = characters(feed)[0]
                     # print(sentence)
