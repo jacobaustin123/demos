@@ -5,3 +5,5 @@ def fibonacci(): # generator
         a, b = b, a + b
 
 fib = fibonacci()
+
+print(next(fib))
