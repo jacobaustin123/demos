@@ -4,3 +4,13 @@ def fib(n, computed = {0: 0, 1: 1}):
     return computed[n]
     
 print(fib(50))
+
+# or use the built-in decorator
+
+"""import functools
+
+@functools.lru_cache(None)
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n-1) + fib(n-2)"""
