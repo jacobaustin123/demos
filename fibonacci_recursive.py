@@ -4,6 +4,3 @@ def fib(n, computed = {0: 0, 1: 1}):
     return computed[n]
     
 print(fib(50))
-  
-  
-  
