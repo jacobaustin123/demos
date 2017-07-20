@@ -13,6 +13,10 @@ command. Partially adapted from user Gauss256's kernel for the Kaggle Docs vs. C
 central_limit.py is a demonstration of the central limit theorem, computing means from arbitrary distributions and plotting
 the output as a histogram, which should approach a normal distribution.
 
+### mandelbrot.py
+
+A simple mandelbrot set generator. The size of the image and the number of iterations performed on each pixel can be changed.
+
 ### name_generator.py
 
 name_generator.py generates names and numbers in a variety of formats, for use in a variety of programs, like the grading
