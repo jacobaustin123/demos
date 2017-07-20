@@ -10,7 +10,6 @@ the if SAVE.upper() = .H5PY section for labels."""
 import argparse
 import os
 
-from multiprocessing import Process, Queue
 import re
 import glob
 
