@@ -1,9 +1,9 @@
-# examples Python demos and utilities, mostly for machine learning and image
-formatting. 
+# examples 
+Python demos and utilities, mostly for machine learning and image formatting. 
 
 ### preprocessing.py
 
-Of particular interest is the preprocessing.py program, which takes images of
+Of particular interest is the preprocessing.py program, which takes images of 
 arbitrary size, rebalances the colors, resizes them, and saves them in a variety
 of image formats. For a full list of options, use the `python preprocessing.py
 -h` command. Partially adapted from user Gauss256's kernel for the Kaggle Docs
