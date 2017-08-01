@@ -27,6 +27,8 @@ should approach a normal distribution.
 A simple mandelbrot set generator. The size of the image and the number of
 iterations performed on each pixel can be changed.
 
+![mandelbrot.png](https://raw.githubusercontent.com/ja3067/demos/master/mandelbrot.png)
+
 ### name_generator.py
 
 name_generator.py generates names and numbers in a variety of formats, for use
