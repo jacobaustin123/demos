@@ -1,4 +1,4 @@
-# examples 
+# demos 
 Python demos and utilities, mostly for machine learning and image formatting. 
 
 ### preprocessing.py
